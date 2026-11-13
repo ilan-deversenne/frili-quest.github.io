@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte'
+  import { resolve } from '$app/paths'
   import logo from '$lib/assets/logo.png'
   import hamburger from '$lib/assets/hamburger.png'
   import { isLoggedIn, signout } from '../routes/login/login';
@@ -16,16 +17,16 @@
   }
 
   const links = [
-    { href: '/', label: 'Accueil' },
+    { href: resolve('/'), label: 'Accueil' },
     { href: '#learn-more', label: 'Mascottes' },
-    { href: '/', label: 'FAQ' },
+    { href: resolve('/'), label: 'FAQ' },
   ]
 </script>
 
 <nav class="p-4 bg-(--nav) {opened ? 'bg-(--secondary) fixed top-0 z-20 w-full' : ''}">
   <ul class="flex justify-between items-center">
     <li>
-      <a href="/"><img src={logo} alt="Logo" width="42" height="42"></a>
+      <a href={resolve('/')}><img src={logo} alt="Logo" width="42" height="42"></a>
     </li>
     <li class="md:hidden">
       <button
@@ -44,8 +45,8 @@
       {/each}
 
       {#if !loggedIn}
-        <a href="/login">Connexion</a>
-        <a href="/register" class="p-3 px-6 bg-[var(--purple)] rounded-sm text-white">Inscription</a>
+        <a href={resolve('/login')}>Connexion</a>
+        <a href={resolve('/register')} class="p-3 px-6 bg-[var(--purple)] rounded-sm text-white">Inscription</a>
       {:else}
         <button class="p-3 px-6 bg-red-600 rounded-sm text-white hover:cursor-pointer" onclick={signout}>Se déconnecter</button>
       {/if}
@@ -62,8 +63,8 @@
     </ul>
     {#if !loggedIn}
       <ul class="mt-26 flex flex-col gap-6 text-center font-bold">
-        <li><a href="/login">Connexion</a></li>
-        <li><a href="/register" class="p-3 px-6 bg-[var(--purple)] rounded-sm text-white">Inscription</a></li>
+        <li><a href={resolve('/login')}>Connexion</a></li>
+        <li><a href={resolve('/register')} class="p-3 px-6 bg-[var(--purple)] rounded-sm text-white">Inscription</a></li>
       </ul>
     {:else}
       <ul class="mt-26 flex flex-col gap-6 text-center font-bold">

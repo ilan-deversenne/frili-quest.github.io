@@ -3,7 +3,10 @@ import { sveltekit } from '@sveltejs/kit/vite'
 import tailwindcss from '@tailwindcss/vite'
 import { defineConfig } from 'vite'
 
-export default defineConfig({
+// The site is served from https://ilan-deversenne.github.io/frili-quest.github.io/
+const BASE = '/frili-quest.github.io'
+
+export default defineConfig(({ command }) => ({
 	resolve: {
 		alias: { '$lib': '/src/lib' }
 	},
@@ -12,7 +15,10 @@ export default defineConfig({
 		sveltekit({
 			adapter: adapter({
 				fallback: 'index.html'
-			})
+			}),
+			paths: {
+				base: command === 'build' ? BASE : ''
+			}
 		})
 	]
-})
+}))

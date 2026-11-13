@@ -1,4 +1,5 @@
 <script>
+  import { resolve } from '$app/paths'
   import Navbar from '$lib/Navbar.svelte';
   import buyus from '$lib/assets/buyus.png';
 </script>
@@ -13,7 +14,7 @@
 
   <div class="pt-12 pb-32 flex gap-4 justify-center items-center text-sm">
     <a href="#learn-more" class="font-bold">En savoir plus</a>
-    <a href="/register" class="p-3 bg-[var(--secondary)] text-white rounded-sm">Commencez maintenant</a>
+    <a href={resolve('/register')} class="p-3 bg-[var(--secondary)] text-white rounded-sm">Commencez maintenant</a>
   </div>
 </header>
 
