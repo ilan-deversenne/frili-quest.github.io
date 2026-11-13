@@ -1,0 +1,23 @@
+{
+	"extends": "$app/tsconfig",
+	"include": ["src", "test", "*"],
+	"exclude": ["src/service-worker"],
+	"compilerOptions": {
+		"paths": {
+			"$lib": ["./src/lib/index.ts"],
+			"$lib/*": ["./src/lib/*"]
+		},
+		"rewriteRelativeImportExtensions": true,
+		"allowJs": true,
+		"checkJs": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"sourceMap": true,
+		"strict": true,
+		"moduleResolution": "bundler"
+	}
+	// To make changes to top-level options such as include and exclude, we recommend extending
+	// the built-in config; see https://svelte.dev/docs/kit/configuration#typescript
+}

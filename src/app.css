@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+:root {
+  --text: #222;
+  --title: #000;
+  --bg: #eee;
+  --nav: #d9d9d9;
+  --ink: #184D56;
+  --tile: #E4F7F5;
+  --muted: #567F85;
+  --primary: #64b8c5;
+  --secondary: #16808e;
+  --purple: #BC7AB3;
+  --light-purple: #C8A2C7;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+.wave {
+  width: 100%;
+  height: clamp(500px, 25vw, 400px);
+  background-image: url('/wave.png');
+  background-size: cover;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 800px) {
+  .wave {
+    height: clamp(600px, 25vw, 400px);
+  }
+}
+@media (min-width: 900px) {
+  .wave {
+    height: clamp(700px, 25vw, 400px);
+  }
+}
+@media (min-width: 1000px) {
+  .wave {
+    height: clamp(750px, 25vw, 400px);
+  }
+}
+@media (min-width: 1200px) {
+  .wave {
+    height: clamp(800px, 25vw, 400px);
+  }
+}
+@media (min-width: 1400px) {
+  .wave {
+    height: clamp(850px, 25vw, 400px);
+  }
+}
+@media (min-width: 1550px) {
+  .wave {
+    height: clamp(900px, 25vw, 400px);
+  }
+}
+
+.navwave {
+  background-image: url('/navwave.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
